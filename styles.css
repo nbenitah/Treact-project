@@ -39,6 +39,11 @@ section {
     gap: 2rem;
     flex-wrap: wrap;
     position: relative;
+    width: 100%;
+}
+
+.logo {
+    margin-right: auto;
 }
 
 .nav-links {
@@ -47,6 +52,7 @@ section {
     gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: flex-end;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -93,7 +99,7 @@ section {
 }
 
 /* Navbar responsive for mobile */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .navbar {
         padding: 1rem 0;
     }
@@ -103,6 +109,7 @@ section {
         justify-content: space-between !important;
         gap: 1.5rem;
         padding: 0 20px;
+        width: 100%;
     }
     
     .logo {
@@ -160,7 +167,6 @@ section {
 
 
      
-
 
 
 
@@ -847,6 +853,8 @@ body {
     gap: 30px;
 
 }
+
+
 .plan {
     background-color:#f9f9ff;
 border: 1px solid#ddd;
@@ -1628,7 +1636,7 @@ color: #5c5c5c;}
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 20px;
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -1640,6 +1648,14 @@ color: #5c5c5c;}
     flex: 1;
     max-width: 600px;
     flex-shrink: 0;
+    width: 100%;
+  }
+
+ .steps-section .content-container {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
   }
 
  /*left side: laptop/mockup area*/
@@ -1728,13 +1744,8 @@ step-content p {
         text-align: center;
         padding: 40px 20px;
     }
-    
-    .steps-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
 }
+
 .step-item {
     text-align: left;
 }
@@ -1751,56 +1762,118 @@ step-content p {
 
 /* Additional responsive fixes for all pages */
 @media (max-width: 768px) {
+    /* Hero section mobile */
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        grid-template-columns: none !important;
+        padding: 40px 20px !important;
+    }
+    
+    .hero-content,
+    .hero-image {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
     /* Values section mobile */
     .values-section {
+        display: flex !important;
         flex-direction: column !important;
-        text-align: center;
+        text-align: center !important;
+        padding: 40px 20px !important;
+    }
+    
+    .content-side,
+    .image-side {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    .content-side .features-grid {
+        justify-content: center !important;
     }
     
     /* Steps section mobile */
     .steps-section {
-        flex-direction: column !important;
+        flex-direction: column-reverse !important;
+        gap: 40px !important;
+        padding: 40px 20px !important;
+        text-align: center !important;
+    }
+    
+    .steps-section .image-container {
+        max-width: 70% !important;
+        width: 70% !important;
+        flex: none !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    .steps-section .image-container img,
+    .steps-section .mockup {
+        width: 100% !important;
+        max-width: 350px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    .steps-section .content-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        flex: none !important;
     }
     
     /* Pricing cards mobile */
+    .pricing-section {
+        text-align: center !important;
+    }
+    
     .plans-container {
         flex-direction: column !important;
-        align-items: center;
+        align-items: center !important;
     }
     
     .plan {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 20px;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto 20px auto !important;
     }
     
-    /* Testimonials mobile - already added */
+    /* Testimonials mobile */
     .testimonials-container {
         flex-direction: column !important;
-        padding: 60px 5%;
+        padding: 60px 5% !important;
     }
     
     .graphic-column,
     .content-column {
         max-width: 100% !important;
+        width: 100% !important;
     }
     
     /* Services grid - 2 columns on mobile/tablet */
-    .services-section .features-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 30px;
-        padding: 0 20px;
-        height: auto !important;
-        overflow: visible !important;
-    }
-    
     .services-section {
         height: auto !important;
         overflow: visible !important;
+        text-align: center !important;
+    }
+    
+    .services-section .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+        padding: 0 20px !important;
+        height: auto !important;
+        overflow: visible !important;
+        justify-items: center !important;
     }
     
     .feature-card {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
@@ -2100,14 +2173,149 @@ step-content p {
     }
 }
 
+/* 480px - All sections single column on small mobile */
 @media (max-width: 480px) {
+    /* CTA section - stack vertically */
+    .treact-cta .content-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 30px !important;
+    }
+    
+    .button-group {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 15px !important;
+    }
+    
+    .btn-get-started,
+    .btn-contact {
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+    
+    /* Values section (Quality Work) - centered */
+    .values-section {
+        text-align: center !important;
+        padding: 40px 20px !important;
+    }
+    
+    .content-side,
+    .image-side {
+        margin: 0 auto !important;
+    }
+    
+    /* Services grid - 1 column centered */
+    .services-section {
+        text-align: center !important;
+    }
+    
+    .services-section .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        justify-items: center !important;
+    }
+    
+    .feature-card {
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    /* Pricing section - centered */
+    .pricing-section {
+        text-align: center !important;
+        padding: 40px 15px !important;
+    }
+    
+    .plans-container {
+        align-items: center !important;
+    }
+    
+    .plan {
+        margin: 0 auto 20px auto !important;
+        width: 90% !important;
+        max-width: 350px !important;
+        padding: 30px 20px !important;
+    }
+    
+    .plan h3,
+    .plan h4,
+    .plan p {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* Steps section - ensure single column */
+    .steps-section {
+        flex-direction: column-reverse !important;
+    }
+    
+    .steps-section .image-container {
+        max-width: 90% !important;
+        width: 90% !important;
+    }
+    
+    .steps-section .mockup {
+        max-width: 300px !important;
+    }
+    
+    /* Testimonials section - ensure single column */
+    .testimonials-container {
+        flex-direction: column !important;
+    }
+    
+    .graphic-column,
+    .content-column {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .graphic-column img {
+        max-width: 80% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Footer grid - 1 column */
     .footer-grid {
         grid-template-columns: 1fr !important;
-        gap: 40px;
+        gap: 40px !important;
     }
     
     .footer-section {
-        padding: 60px 20px 30px 20px;
+        padding: 60px 20px 30px 20px !important;
+    }
+}
+
+/* Very small screens - below 300px */
+@media (max-width: 300px) {
+    .plan {
+        width: 95% !important;
+        max-width: none !important;
+        padding: 20px 10px !important;
+        margin: 0 auto 15px auto !important;
+    }
+    
+    .plan h3 {
+        font-size: 18px !important;
+    }
+    
+    .plan h4 {
+        font-size: 32px !important;
+    }
+    
+    .plan ul {
+        padding-left: 15px !important;
+    }
+    
+    .plan li {
+        font-size: 13px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .pricing-section {
+        padding: 30px 10px !important;
     }
 }
 /*END OF PAGE 8 CSS*/
