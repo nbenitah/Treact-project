@@ -639,8 +639,8 @@ body {
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
-/* features grid*/
-.features-grid {
+/* features grid - NOT for values section */
+.services-section .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -1419,19 +1419,18 @@ Geneva, Verdana, sans-serif;
     margin-bottom: 40px;
 
 }
-/* feature grid Styles*/
-.features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
-    display: flex;
-
-    
+/* feature grid Styles for values section*/
+.values-section .features-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 50px;
+    margin-bottom: 50px;
 }
-.feature-item {
-    display: flex;
+.values-section .feature-item {
+    display: flex !important;
     gap: 15px;
+    flex: 0 0 100% !important;
+    width: 100% !important;
 }
 .feature-item h3 {
     color: #243e63;
@@ -1514,9 +1513,15 @@ Geneva, Verdana, sans-serif;
     .values-text h2 {
         font-size:  2.2rem;
     }
-}
-.features-grid {
-    grid-template-columns: 1fr;
+    
+    .values-section .features-grid {
+        flex-direction: column !important;
+    }
+    
+    .values-section .feature-item {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
 }
 
 
@@ -1793,7 +1798,15 @@ step-content p {
     }
     
     .content-side .features-grid {
+        flex-direction: column !important;
         justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .values-section .feature-item {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 500px !important;
     }
     
     /* Steps section mobile */
@@ -2203,6 +2216,18 @@ step-content p {
     .content-side,
     .image-side {
         margin: 0 auto !important;
+    }
+    
+    .values-section .features-grid {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+    
+    .values-section .feature-item {
+        width: 100% !important;
+        max-width: 450px !important;
+        margin-bottom: 30px !important;
     }
     
     /* Services grid - 1 column centered */
